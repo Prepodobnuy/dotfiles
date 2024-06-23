@@ -1,0 +1,46 @@
+[colors.bright]
+black = "#221610"
+red = "#ab7253"
+green = "#ab968b"
+yellow = "#ab896e"
+blue = "#b0662b"
+magenta = "#c5b6a3"
+cyan = "#556baa"
+white = "#c7c4c3"
+
+[colors.normal]
+black = "#221610"
+red = "#ab7253"
+green = "#ab968b"
+yellow = "#ab896e"
+blue = "#b0662b"
+magenta = "#c5b6a3"
+cyan = "#556baa"
+white = "#c7c4c3"
+
+[colors.primary]
+background = "#221610"
+foreground = "#c7c4c3"
+
+[font]
+size = 12
+
+[font.bold]
+family = "Terminess Nerd Font Propo"
+style = "Bold"
+
+[font.bold_italic]
+family = "Terminess Nerd Font Propo"
+style = "Bold Italic"
+
+[font.italic]
+family = "Terminess Nerd Font Propo"
+style = "Italic"
+
+[font.normal]
+family = "Terminess Nerd Font Propo"
+style = "Regular"
+
+[window.padding]
+x = 0
+y = 0
