@@ -1,6 +1,4 @@
-![](preview/A.png)
 ![](preview/B.png)
-![](preview/C.png)
 
 ## dependencies
 
