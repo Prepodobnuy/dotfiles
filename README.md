@@ -9,7 +9,7 @@
  - pywal
  - alacritty
  - nemo
- - rofi-lbonn-wayland-git
+ - rofi-lbonn-wayland
  - waybar
  - hyprshotgun
  - ttf-terminus-nerd
