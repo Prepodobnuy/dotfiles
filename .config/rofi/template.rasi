@@ -19,7 +19,7 @@ window {
 	orientation: vertical;
 	border-color: #FDFDFD;
 	border: 1 1 1 1;
-	border-radius: 8px;
+	border-radius: 0px;
 	border-color: (color6);
 }
 

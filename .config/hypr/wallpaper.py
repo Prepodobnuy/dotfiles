@@ -17,26 +17,29 @@ from PIL import Image
 
 
 HOME = os.getenv("HOME")
-WALLPAPERSDIR = f"{HOME}/Documents/Wallpapers"
-WALCOLORSPATH = f"{HOME}/.cache/wal/colors"
-WALBACKEND = f"colorz"
-CACHEDWALLPAPERSDIR = f"{HOME}/Documents/CachedWallpapers"
-WORKINGDIR = f"{HOME}/.config/hypr"
-SWWWPARAMS = "--transition-fps 165 -t any"
-SLEEPTIME = 360000
-HELPMESSAGE = """-h --help                      display this message
--p [path]                      set wallpapers directory
--w [backend]                   set wal backend
--s [value]                     set sleep time
---dconf [path]                 set display config path
---swww "-param --param 123"    set swww params"""
-
+WALLPAPERSDIR = f"{HOME}/Documents/Wallpapers"                 #-wd --wallpaper-dir [path/to/dir]
+CACHEDWALLPAPERSDIR = f"{HOME}/Documents/CachedWallpapers"     #-cwd --cached-wallpaper-dir [path/to/dir]
+WALCOLORSDIR = f"{HOME}/.cache/wal/colors"                     #-pcd --pywal-colors-dir [path/to/dir]
+WALBACKEND = f"colorz"                                         #-pb --pywal-backend [backed]
+CONFIGPATH = f"{HOME}/.config/hypr/configs"                    #-c --conf [path/to/file]
+DISPLAYPATH = f"{HOME}/.config/hypr/displays"                  #-dc --display-conf [path/to/file] 
+SWWWPARAMS = "--transition-fps 165 -t any"                     #--swww "-param -param"
+SLEEPTIME = 360000                                             #-s --sleep-time timeToSleepInSeconds
+RESIZEDISPLAYS = False                                         #--resize-displays
+HELPMESSAGE = """-wd --wallpaper-dir [path/to/dir]
+-cwd --cached-wallpaper-dir [path/to/dir]
+-pcd --pywal-colors-dir [path/to/dir]
+-pb --pywal-backend [backed]
+-c --conf [path/to/file]
+-dc --display-conf [path/to/file] 
+--swww "-param -param"
+-s --sleep-time timeToSleepInSeconds
+--resize-displays
+--cache-all
+"""
 DEBUG = False
 
 class Display(object):
-    """
-    Class for containing display params wich is readed from displays file
-    """
     def __init__(self, name:str, width:int, height:int, margin_x:int=0, margin_y:int=0) -> None:
         self.name:str = name
         self.w:int = width
@@ -46,19 +49,15 @@ class Display(object):
         self.image = None
 
     def max_width(displays:list) -> int:
-        """Function wich is searching largest width+marginx value from list of displays"""
         res = 0
         for display in displays:
             res = display.w + display.x if display.w + display.x > res else res
-        
         return res
 
     def max_height(displays:list) -> int:
-        """Function wich is searching largest height+marginy value from list of displays"""
         res = 0
         for display in displays:
             res = display.h + display.y if display.h + display.y > res else res
-        
         return res
     
     def __str__(self) -> str:
@@ -69,7 +68,7 @@ class Display(object):
 
 def read_display_config() -> list[Display]:
     res:list[Display] = []
-    with open(f"{WORKINGDIR}/displays") as file:
+    with open(DISPLAYPATH) as file:
         data = (file.read()).split('\n')
 
     for row in data:
@@ -84,19 +83,13 @@ def read_display_config() -> list[Display]:
             margin_y = int(params[2].split('x')[1])
         )
         res.append(tmp)
-
     return res
 
-def resize_displays(displays:list[Display], wallpaper_path:str):
+def resize_displays(displays:list[Display], wallpaper:Image):
     if DEBUG: print("//resizing displays")
     maxw = Display.max_width(displays)
-    maxh = Display.max_height(displays)
-
-    image = Image.open(wallpaper_path)
-    imagew, imageh = image.size
-
+    imagew, imageh = wallpaper.size
     width_dif = imagew / maxw
-    height_dif = imageh / maxh
 
     for display in displays:
         display.w = int(display.w * width_dif)
@@ -104,13 +97,9 @@ def resize_displays(displays:list[Display], wallpaper_path:str):
         display.x = int(display.x * width_dif)
         display.y = int(display.y * width_dif)
 
-    if DEBUG: print(f"default params:\n\timage {imagew}x{imageh}\n\tdispays {maxw}x{maxh}\n\tdifference {width_dif}x{height_dif}")
 
-    maxw = Display.max_width(displays)
     maxh = Display.max_height(displays)
-    width_dif = imagew / maxw
     height_dif = imageh / maxh
-    if DEBUG: print(f"after width scaling:\n\timage {imagew}x{imageh}\n\tdispays {maxw}x{maxh}\n\tdifference {width_dif}x{height_dif}")
 
     if height_dif < 1:
         for display in displays:
@@ -119,20 +108,35 @@ def resize_displays(displays:list[Display], wallpaper_path:str):
             display.x = int(display.x * height_dif)
             display.y = int(display.y * height_dif)
 
-    maxw = Display.max_width(displays)
-    maxh = Display.max_height(displays)
-    width_dif = imagew / maxw
-    height_dif = imageh / maxh
-    if DEBUG: print(f"after height scaling:\n\timage {imagew}x{imageh}\n\tdispays {maxw}x{maxh}\n\tdifference {width_dif}x{height_dif}")
-
     return displays
+
+def resize_wallpaper(displays:list[Display], wallpaper:Image):
+    if DEBUG: print("//resizing picture")
+    maxw = Display.max_width(displays)
+    imagew, imageh = wallpaper.size
+
+    width_dif =  maxw / imagew
+
+    nwidth  = int(imagew * width_dif)
+    nheigth = int(imageh * width_dif)
+
+    wallpaper = wallpaper.resize((nwidth, nheigth))
+
+    maxh = Display.max_height(displays)
+    imagew, imageh = wallpaper.size
+    height_dif = maxh / imageh
+
+    if height_dif > 1:
+        nwidth  = int(imagew * height_dif)
+        nheigth = int(imageh * height_dif)
+        wallpaper = wallpaper.resize((nwidth, nheigth))
+    
+    return wallpaper
 
 def split_wallpaper(displays, wallpaper):
     if DEBUG: print("//spliting image")
-    image = Image.open(wallpaper)
-
     for display in displays:
-        display.image = image.crop((
+        display.image = wallpaper.crop((
             display.x,
             display.y,
             display.w + display.x,
@@ -143,7 +147,6 @@ def split_wallpaper(displays, wallpaper):
     return displays
 
 class Template(object):
-    """Class for containing config params wich is readed from configs file"""
     def __init__(self, templatepath, configpath, usequotes=False, usesharps=False, command=None, opacity='') -> None:
         self.templatefilepath = templatepath
         self.configfilepath = configpath
@@ -182,7 +185,7 @@ class Template(object):
 
 def read_templates():
     res = []
-    with open(f"{WORKINGDIR}/configs") as file:
+    with open(CONFIGPATH) as file:
         data = (file.read()).split('\n')
     
     for row in data:
@@ -216,88 +219,114 @@ def runrofi(wallpapers):
     result = subprocess.run(['rofi', '-dmenu', '-p'], input='\n'.join(wallpapers).encode(), stdout=subprocess.PIPE)
     return result.stdout.decode()
 
-def cacheWallpapers():
-    for wallpaperName in os.listdir(WALLPAPERSDIR):
-        wallpaper = f"{WALLPAPERSDIR}/{wallpaperName}" 
-        displays = resize_displays(read_display_config(), wallpaper)
-        displays = split_wallpaper(displays, wallpaper)
+def cacheWallpapers(image=None):
+    def cache(wallpaperName):
+        default_displays = read_display_config()
         print(f"caching {wallpaperName}...")
-        for display in displays:
-            if os.path.exists(f'{CACHEDWALLPAPERSDIR}/{display.name}{wallpaperName.split('.')[0]}.png'): 
-                print(f"{wallpaperName} is already cached")
-                break
-            else: display.image.save(f'{CACHEDWALLPAPERSDIR}/{display.name}{wallpaperName.split('.')[0]}.png', optimize=True, quality=100)
+        for i in range(len(default_displays)):
+            if os.path.exists(f'{CACHEDWALLPAPERSDIR}/{default_displays[i].name}-{default_displays[i].w}.{default_displays[i].h}.{default_displays[i].x}.{default_displays[i].y}{wallpaperName.split('.')[0]}.png'): 
+                print(f"image for {default_displays[i].name} is already cached")
+                continue
 
+            wallpaper = Image.open(f"{WALLPAPERSDIR}/{wallpaperName}") 
+            if RESIZEDISPLAYS: displays = resize_displays(read_display_config(), wallpaper)
+            else: 
+                displays = read_display_config()
+                wallpaper = resize_wallpaper(displays, wallpaper)
+
+            displays = split_wallpaper(displays, wallpaper)
+            displays[i].image.save(f'{CACHEDWALLPAPERSDIR}/{default_displays[i].name}-{default_displays[i].w}.{default_displays[i].h}.{default_displays[i].x}.{default_displays[i].y}{wallpaperName.split('.')[0]}.png', optimize=True, quality=100)
+        print("-------------------------------------")
+
+    if image == None:
+        for wallpaperName in os.listdir(WALLPAPERSDIR):
+            cache(wallpaperName)
+    else: 
+        wallpaperName = image.split('/')[-1] if '/' in image else image
+        wallpaperName = wallpaperName.split('\n')[0] if '\n' in wallpaperName else wallpaperName
+        cache(wallpaperName)
     print()
 
-def main(wallpaperName) -> None:
-    wallpaper = f"{WALLPAPERSDIR}/{wallpaperName}" 
-    
-    os.system(f"python -m pywal -i {wallpaper} -n --backend {WALBACKEND}")
-    print(f"\n//selected image: {wallpaper}")
-    
+def set_wallpapper(wallpaperName):
+    displays = read_display_config()
+    for display in displays:
+        wallpaper = f"{WALLPAPERSDIR}/{wallpaperName}" 
+        xorg = False
+        os.system(f"python -m pywal -i {wallpaper} -n --backend {WALBACKEND}")
+        print(f"\n//selected image: {wallpaper}")
+        
+        try:
+            if 'wayland' in os.environ['XDG_BACKEND']:
+                print('//splited to:')
+                print(f"{CACHEDWALLPAPERSDIR}/{display.name}-{display.w}.{display.h}.{display.x}.{display.y}{wallpaperName.split('.')[0]}.png")
+                os.system(f"swww img {CACHEDWALLPAPERSDIR}/{display.name}-{display.w}.{display.h}.{display.x}.{display.y}{wallpaperName.split('.')[0]}.png -o {display.name} {SWWWPARAMS}")
+        
+        except Exception as e:
+            print(e)
+            os.system(f"feh --bg-fill {WALLPAPERSDIR}/{wallpaperName} --no-xinerama")
+            xorg = True
+        templates = read_templates()
+        with open(f'{WALCOLORSDIR}') as file:
+            colors = (file.read()).split('\n')
+        print("\n//changing configs:")
+        for template in templates:
+            print(template)
+            template.apply_colors(colors)
+        if xorg: break
+
+
+def main(wallpaperName, runcount=None) -> None:
+    iteration = 0
+    prev_wallpaper = None
+
     try:
-        if 'wayland' in os.environ['XDG_BACKEND']:
-            displays = read_display_config()
-            print('//splited to:')
-            for display in displays:
-                print(f"{CACHEDWALLPAPERSDIR}/{display.name}{wallpaperName.split('.')[0]}.png")
-                os.system(f"swww img {CACHEDWALLPAPERSDIR}/{display.name}{wallpaperName.split('.')[0]}.png -o {display.name} {SWWWPARAMS}")
-    except Exception as e:
-        print(e)
-        os.system(f"feh --bg-fill --no-xinerama {WALLPAPERSDIR}/{wallpaperName}")
+        while iteration != runcount:
+            if iteration > 0 : time.sleep(SLEEPTIME)
+            while wallpaperName == prev_wallpaper:
+                wallpaperName = random.choice(os.listdir(WALLPAPERSDIR))
+            prev_wallpaper = wallpaperName
 
-    templates = read_templates()
-    with open(f'{WALCOLORSPATH}') as file:
-        colors = (file.read()).split('\n')
+            cacheWallpapers(wallpaperName)
+            set_wallpapper(wallpaperName)
+            
+            iteration += 1
+    except KeyboardInterrupt:
+        print('exiting...')
+        return
 
-    print("\n//changing configs:")
-    for template in templates:
-        print(template)
-        template.apply_colors(colors)
+def in_args(params:list[str]) -> bool:
+    for param in params:
+        if param in sys.argv: return True
+    return False
+
+def get_value_from_args(params:list[str]) -> str:
+    for param in params:
+        if param in sys.argv: return  sys.argv[sys.argv.index(param)+1]
+    return None
 
 if __name__ == "__main__":
-    def in_args(params:list[str]) -> bool:
-        for param in params:
-            if param in sys.argv: return True
-        return False
+    wallpaperName=random.choice(os.listdir(WALLPAPERSDIR))
+    runcount = -1
+
+
+    if in_args(['-h', '--help']): print(HELPMESSAGE); exit()
+    if in_args(['-wd', '--wallpaper-dir']):         WALLPAPERSDIR       = get_value_from_args(['-wd', '--wallpaper-dir'])
+    if in_args(['-cwd', '--cached-wallpaper-dir']): CACHEDWALLPAPERSDIR = get_value_from_args(['-cwd', '--cached-wallpaper-dir'])
+    if in_args(['-pcd', '--pywal-colors-dir']):     WALCOLORSDIR        = get_value_from_args(['-pcd', '--pywal-colors-dir'])
+    if in_args(['-pb', '--pywal-backend']):         WALBACKEND          = get_value_from_args(['-pb', '--pywal-backend'])
+    if in_args(['-c', '--conf']):                   CONFIGPATH          = get_value_from_args(['-c', '--conf'])
+    if in_args(['-dc', '--display-conf']):          DISPLAYPATH         = get_value_from_args(['-dc', '--display-conf'])
+    if in_args(['--swww']):                         SWWWPARAMS          = get_value_from_args(['--swww'])
+    if in_args(['-s', '--sleep-time']):             SLEEPTIME       = int(get_value_from_args(['-s','--sleep-time']))
+    if in_args(['--resize-displays']):              RESIZEDISPLAYS = True
+    if in_args(['--cache-all']): cacheWallpapers()
+    if in_args(['-r', '--rofi']): 
+        wallpaperName = runrofi(os.listdir(WALLPAPERSDIR))
+        runcount = 1 
+    if in_args(['--once']): 
+        runcount = 1
     
-    def args_index(params:list[str]) -> int:
-        for param in params:
-            if param in sys.argv: return sys.argv.index(param)+1
-
-    if in_args(['-h', '--help']):
-        print(HELPMESSAGE)
-        exit()
-
-    if in_args(['-p']):     WALLPAPERSDIR =     sys.argv[args_index(['-p'])]
-    if in_args(['-w']):     WALBACKEND    =     sys.argv[args_index(['-w'])]
-    if in_args(['-s']):     SLEEPTIME     = int(sys.argv[args_index(['-s'])])
-    if in_args(['--conf']): WORKINGDIR    =     sys.argv[args_index(['--conf'])]
-    if in_args(['--swww']): SWWWPARAMS    =     sys.argv[args_index(['--swww'])]
-    
-    if in_args(['-r']): tmp = runrofi(os.listdir(WALLPAPERSDIR)); main(tmp)         
-    
-    else:
-        try:
-            wallpapers = os.listdir(WALLPAPERSDIR)
-            cacheWallpapers()
-            while True:
-                tmp, wallpaper = "govnokod", "govnokod"
-
-                while wallpaper == tmp:
-                    wallpaperName = random.choice(wallpapers)
-                    wallpaper = f"{WALLPAPERSDIR}/{wallpaperName}" 
-                tmp = wallpaper
-
-                main(wallpaperName)
-
-                if in_args(['--once']):
-                    time.sleep(2)
-                    exit()
-
-                time.sleep(SLEEPTIME)
-
-        except KeyboardInterrupt:
-            print("exiting")
-            exit()
+    main(
+        wallpaperName=wallpaperName, 
+        runcount=runcount
+        )

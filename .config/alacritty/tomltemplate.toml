@@ -23,22 +23,22 @@ background = (color0)
 foreground = (color15)
 
 [font]
-size = 12
+size = 9
 
 [font.bold]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window.padding]

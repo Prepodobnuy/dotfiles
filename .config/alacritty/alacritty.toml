@@ -1,44 +1,44 @@
 [colors.bright]
-black = "#221610"
-red = "#ab7253"
-green = "#ab968b"
-yellow = "#ab896e"
-blue = "#b0662b"
-magenta = "#c5b6a3"
-cyan = "#556baa"
-white = "#c7c4c3"
+black = "#0e0706"
+red = "#3630D6"
+green = "#D54FBC"
+yellow = "#ED01FD"
+blue = "#E121ED"
+magenta = "#FE859D"
+cyan = "#F791AA"
+white = "#f4cde0"
 
 [colors.normal]
-black = "#221610"
-red = "#ab7253"
-green = "#ab968b"
-yellow = "#ab896e"
-blue = "#b0662b"
-magenta = "#c5b6a3"
-cyan = "#556baa"
-white = "#c7c4c3"
+black = "#0e0706"
+red = "#3630D6"
+green = "#D54FBC"
+yellow = "#ED01FD"
+blue = "#E121ED"
+magenta = "#FE859D"
+cyan = "#F791AA"
+white = "#f4cde0"
 
 [colors.primary]
-background = "#221610"
-foreground = "#c7c4c3"
+background = "#0e0706"
+foreground = "#f4cde0"
 
 [font]
-size = 12
+size = 9
 
 [font.bold]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "Terminess Nerd Font Propo"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window.padding]
