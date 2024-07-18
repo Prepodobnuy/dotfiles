@@ -1,66 +1,82 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "left", // Waybar position (top|bottom|left|right)
-    "height": 32, 
-    "spacing": 5, 
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "hyprland/language",
-        "tray",
-	"pulseaudio"
-    ],
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 4
-    },
-    "clock": {
-        // "timezone": "America/New_York",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-    "hyprland/workspaces": {
-        "persistent-workspaces": {
-            "DP-1": [1, 2, 3, 4, 5], 
-            "HDMI-A-1": [6, 7, 8, 9, 10] 
-      }
-    },
-    "hyprland/language": {
-        "format": "{}",
-        "format-en": "En",
-        "format-ru": "Ru"
+  // "layer": "top", // Waybar at top layer
+  // "position": "left", // Waybar position (top|bottom|left|right)
+  "height": 32,
+  "spacing": 5,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "tray",
+    "pulseaudio"
+  ],
+  "keyboard-state": {
+    "numlock": true,
+    "capslock": true,
+    "format": "{name} {icon}",
+    "format-icons": {
+      "locked": "",
+      "unlocked": ""
     }
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 4
+  },
+  "clock": {
+    // "timezone": "America/New_York",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d.%m.%Y}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "DP-1": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "HDMI-A-1": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "En",
+    "format-ru": "Ru"
+  }
 }
