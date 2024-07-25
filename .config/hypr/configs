@@ -1,4 +1,0 @@
-/home/prepodobnuy/.config/rofi/template.rasi;/home/prepodobnuy/.config/rofi/config.rasi;0;1;0 ;
-/home/prepodobnuy/.config/alacritty/tomltemplate.toml;/home/prepodobnuy/.config/alacritty/alacritty.toml;1;1;0 ;
-/home/prepodobnuy/.config/hypr/colorstemplate.conf;/home/prepodobnuy/.config/hypr/colors.conf;0;0;ff; hyprctl reload
-/home/prepodobnuy/.config/waybar/templatestyle.css;/home/prepodobnuy/.config/waybar/style.css;0;1;0 ;killall waybar ; waybar&

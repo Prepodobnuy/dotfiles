@@ -1,0 +1,36 @@
+{
+    "templates": [
+        {
+            "template_path": "~/.my_script_files/wallpaperpy_templates/rofi.rasi",    
+            "config_path": "~/.config/rofi/config.rasi",
+            "use_quotes": 0,
+            "use_sharps": 1,
+            "opacity": 0,
+            "command": ""    
+        },
+        {
+            "template_path": "~/.my_script_files/wallpaperpy_templates/alacritty.toml",    
+            "config_path": "~/.config/alacritty/alacritty.toml",
+            "use_quotes": 1,
+            "use_sharps": 1,
+            "opacity": 0,
+            "command": ""  
+        },
+        {
+            "template_path": "~/.my_script_files/wallpaperpy_templates/variables.conf",    
+            "config_path": "~/.config/hypr/variables.conf",
+            "use_quotes": 0,
+            "use_sharps": 0,
+            "opacity": "ff",
+            "command": "hyprctl reload"  
+        },
+        {
+            "template_path": "~/.my_script_files/wallpaperpy_templates/waybar.css",    
+            "config_path": "~/.config/waybar/style.css",
+            "use_quotes": 0,
+            "use_sharps": 1,
+            "opacity": 0,
+            "command": "killall waybar ; waybar&"  
+        }
+    ]
+}

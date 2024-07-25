@@ -14,13 +14,12 @@
  - hyprshotgun
  - ttf-terminus-nerd
 
-### installing dependencies
-arch
-``` bash
-paru -S python python-pip swww feh pywal alacritty nemo rofi-lbonn-wayland-git waybar hyprshotgun ttf-terminus-nerd
-```
-
-### installing needed python packages
-``` bash
-pip install colorz pillow --break-system-packages
+### Installation
+```bash
+git clone https://github.com/Prepodobnuy/dotfiles.git
+cd dotfiles
+chmod +x install.sh
+./install.sh
+cd ..
+rm -rf dotfiles
 ```
