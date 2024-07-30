@@ -1,7 +1,7 @@
 @theme "/dev/null"
 
 * {
-	bg: #0a1a21;
+	bg: #271c16;
 	background-color: @bg;
 }
 
@@ -19,8 +19,8 @@ window {
 	orientation: vertical;
 	border-color: #FDFDFD;
 	border: 1 1 1 1;
-	border-radius: 0px;
-	border-color: #bfc1c7;
+	border-radius: 2px;
+	border-color: #c290b1;
 }
 
 mainbox {
@@ -33,12 +33,12 @@ mainbox {
 
 element {
 	padding: 8 2;
-	text-color: #c1c5c7;
+	text-color: #c9c6c4;
 }
 
 element selected {
-	text-color: #0a1a21;
-	background-color: #bfc1c7;
+	text-color: #271c16;
+	background-color: #c290b1;
 	border-radius: 3px;
 }
 
@@ -68,7 +68,7 @@ listview {
 //------------------------------------------------
 
 entry {
-	text-color: #c1c5c7;
+	text-color: #c9c6c4;
 	padding: 10 10 0 0;
 	margin: 0 -2 0 0;
 }
@@ -79,7 +79,7 @@ inputbar {
 } 
 
 prompt {
-	text-color: #c1c5c7;
+	text-color: #c9c6c4;
 	padding: 10 6 0 10;
 	margin: 0 -2 0 0;
 }

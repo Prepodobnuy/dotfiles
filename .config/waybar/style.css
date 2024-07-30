@@ -5,9 +5,9 @@
 }
 
 window#waybar {
-    background-color: #0a1a21;
-    border-bottom: 1px solid #bfc1c7;
-    color: #c1c5c7;
+    background-color: #271c16;
+    border-bottom: 1px solid #c290b1;
+    color: #c9c6c4;
 
 }
 
@@ -20,7 +20,7 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #0a1a21;
+    background-color: #271c16;
     border: none;
 }
 
@@ -33,25 +33,25 @@ button {
 
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #bfc1c7;
+    box-shadow: inset 0 -3px #c290b1;
 }
 
 #pulseaudio:hover {
-    box-shadow: inset 0 -3px #bfc1c7;
+    box-shadow: inset 0 -3px #c290b1;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #c1c5c7;
+    color: #c9c6c4;
 }
 
 #workspaces button {
     transition: box-shadow 0.25s, color 0.1s, background-color 0.35s, border-radius 0.25s;
 }
 #workspaces button.active {
-    background-color: #bfc1c7;
-    color: #0a1a21;
+    background-color: #c290b1;
+    color: #271c16;
 }
 #workspaces button.empty {
 
@@ -71,7 +71,7 @@ button:hover {
 #pulseaudio,
 #tray {
     padding: 0 5px;
-    color: #c1c5c7;
+    color: #c9c6c4;
 }
 
 #window,
@@ -93,18 +93,18 @@ button:hover {
 
 @keyframes blink {
     to {
-        background-color: #bfc1c7;
-        color: #c1c5c7;
+        background-color: #c290b1;
+        color: #c9c6c4;
     }
 }
 
 #pulseaudio {
     transition: box-shadow 0.25s;
-    color: #c1c5c7;
+    color: #c9c6c4;
 }
 
 #pulseaudio.muted {
-    color: #475358;
+    color: #5d5450;
 }
 
 #tray {
@@ -120,11 +120,11 @@ button:hover {
 
 
 #language {
-    color: #c1c5c7;
+    color: #c9c6c4;
     padding: 0 3px;
     transition: box-shadow 0.25s;
 }
 #language:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #bfc1c7;
+    box-shadow: inset 0 -3px #c290b1;
 }

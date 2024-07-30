@@ -2,8 +2,9 @@
 {
   // "layer": "top", // Waybar at top layer
   // "position": "left", // Waybar position (top|bottom|left|right)
-  "height": 32,
-  "spacing": 5,
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 30,
+  "spacing": 4,
   "modules-left": [
     "hyprland/workspaces"
   ],
@@ -15,15 +16,6 @@
     "tray",
     "pulseaudio"
   ],
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
   "tray": {
     // "icon-size": 21,
     "spacing": 4
@@ -35,7 +27,7 @@
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
+    "format": "{volume}% {icon}   {format_source}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
