@@ -19,8 +19,8 @@ cyan = (color6)
 white = (color7)
 
 [colors.primary]
-background = (color0)
-foreground = (color15)
+background = (bgcolor)
+foreground = (textcolor)
 
 [font]
 size = 9
