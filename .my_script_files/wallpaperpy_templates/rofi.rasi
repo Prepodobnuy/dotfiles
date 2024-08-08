@@ -5,11 +5,10 @@
 	background-color: @bg;
 }
 
-
 configuration {
 	show-icons: true;
     location: 0;
-	font: "Ubuntu Mono 12";	
+	font: "JetBrainsMono Nerd Font Mono 9";	
 	display-drun: "";
 }
 
@@ -17,9 +16,8 @@ window {
 	width: 420px;
 	transparency: "real";
 	orientation: vertical;
-	border-color: #FDFDFD;
-	border: 1 1 1 1;
-	border-radius: 2px;
+	border: 2 2 2 2;
+	border-radius: 4px;
 	border-color: (primarycolor);
 }
 

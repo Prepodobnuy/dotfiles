@@ -1,121 +1,196 @@
 {
-    "displays": [
-      {
-        "name": "HDMI-A-1",
-        "width": 1920,
-        "height": 1080,
-        "margin-left": 1080,
-        "margin-top": 350
-      },
-      {
-        "name": "DP-1",
-        "width": 1080,
-        "height": 1920,
-        "margin-left": 0,
-        "margin-top": 0
-      }
-    ],
-    "color_variables": [
-      { "name": "(color0)", "value": 0, "brightness": 0},
-      { "name": "(color1)", "value": 1, "brightness": 0},
-      { "name": "(color2)", "value": 2, "brightness": 0},
-      { "name": "(color3)", "value": 3, "brightness": 0},
-      { "name": "(color4)", "value": 4, "brightness": 0},
-      { "name": "(color5)", "value": 5, "brightness": 0},
-      { "name": "(color6)", "value": 6, "brightness": 0},
-      { "name": "(color7)", "value": 7, "brightness": 0},
-      { "name": "(color8)", "value": 8, "brightness": 0},
-      { "name": "(color9)", "value": 9, "brightness": 0},
-      { "name": "(color10)", "value": 10, "brightness": 0},
-      { "name": "(color11)", "value": 11, "brightness": 0},
-      { "name": "(color12)", "value": 12, "brightness": 0},
-      { "name": "(color13)", "value": 13, "brightness": 0},
-      { "name": "(color14)", "value": 14, "brightness": 0},
-      { "name": "(color15)", "value": 15, "brightness": 0},
-      { "name": "(bgcolor)", "value": 0, "brightness": 0},
-      { "name": "(bgcolordark)", "value": 0, "brightness": -15},
-      { "name": "(bgcolordarker)", "value": 0, "brightness": -25},
-      { "name": "(bgcolorlight)", "value": 0, "brightness": 15},
-      { "name": "(bgcolorlighter)", "value": 0, "brightness": 25},
-      { "name": "(textcolor)", "value": 15, "brightness": 0},
-      { "name": "(textcolordark)", "value": 15, "brightness": -15},
-      { "name": "(textcolorlight)", "value": 15, "brightness": 15},
-      { "name": "(primarycolor)", "value": 6, "brightness": 0},
-      { "name": "(primarycolorlighter)", "value": 6, "brightness": 25},
-      { "name": "(primarycolordarker)", "value": 6, "brightness": -25},
-      { "name": "(secondarycolor)", "value": 4, "brightness": 0} 
-    ],
-    "swww_params": "--transition-fps 165 --transition-step 10 --transition-duration 2 -f Nearest -t any",
-    "wal_params": "-n -e -q --backend colorz",
-    "wallpapers_dir": "/home/prepodobnuy/Documents/Wallpapers",
-    "cached_wallpapers_dir": "/home/prepodobnuy/.cache/rpaper/Wallpapers",
-    "wal_cache": "/home/prepodobnuy/.cache/wal/colors",
-    "use_pywal": true,
-    "apply_templates": true,
-    "templates": [
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/rofi.rasi",    
-            "config_path": "/home/prepodobnuy/.config/rofi/config.rasi",
-            "use_quotes": false,
-            "use_sharps": true,
-            "opacity": "",
-            "command": ""    
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/alacritty.toml",    
-            "config_path": "/home/prepodobnuy/.config/alacritty/alacritty.toml",
-            "use_quotes": true,
-            "use_sharps": true,
-            "opacity": "",
-            "command": ""  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/variables.conf",    
-            "config_path": "/home/prepodobnuy/.config/hypr/variables.conf",
-            "use_quotes": false,
-            "use_sharps": false,
-            "opacity": "ff",
-            "command": "hyprctl reload"  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/waybar.css",    
-            "config_path": "/home/prepodobnuy/.config/waybar/style.css",
-            "use_quotes": false,
-            "use_sharps": true,
-            "opacity": "",
-            "command": "killall waybar ; waybar&"  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/swaync.css",    
-            "config_path": "/home/prepodobnuy/.config/swaync/style.css",
-            "use_quotes": false,
-            "use_sharps": true,
-            "opacity": "",
-            "command": "swaync-client -rs"  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/swaync.json",    
-            "config_path": "/home/prepodobnuy/.config/swaync/config.json",
-            "use_quotes": false,
-            "use_sharps": false,
-            "opacity": "",
-            "command": "swaync-client -R"  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/qt6ct.conf",    
-            "config_path": "/home/prepodobnuy/.config/qt6ct/colors/wal.conf",
-            "use_quotes": false,
-            "use_sharps": false,
-            "opacity": "",
-            "command": ""  
-        },
-        {
-            "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/qt6ct-kde.colors",    
-            "config_path": "/home/prepodobnuy/.config/qt6ct/colors/wal.colors",
-            "use_quotes": false,
-            "use_sharps": true,
-            "opacity": "",
-            "command": ""  
-        }
-    ]
+  "displays": [
+    {
+      "name": "HDMI-A-1",
+      "width": 1920,
+      "height": 1080,
+      "margin-left": 1080,
+      "margin-top": 273
+    },
+    {
+      "name": "DP-1",
+      "width": 1080,
+      "height": 1920,
+      "margin-left": 0,
+      "margin-top": 0
+    }
+  ],
+  "color_variables": [
+    {
+      "name": "(bgcolor)",
+      "value": 0,
+      "brightness": 20
+    },
+    {
+      "name": "(bgcolorl1)",
+      "value": 0,
+      "brightness": 10
+    },
+    {
+      "name": "(bgcolorl2)",
+      "value": 0,
+      "brightness": 20
+    },
+    {
+      "name": "(bgcolorl3)",
+      "value": 0,
+      "brightness": 30
+    },
+    {
+      "name": "(bgcolorl4)",
+      "value": 0,
+      "brightness": 40
+    },
+    {
+      "name": "(bgcolorl5)",
+      "value": 0,
+      "brightness": 50
+    },
+    {
+      "name": "(bgcolorl6)",
+      "value": 0,
+      "brightness": 60
+    },
+    {
+      "name": "(bgcolord1)",
+      "value": 0,
+      "brightness": -10
+    },
+    {
+      "name": "(bgcolord2)",
+      "value": 0,
+      "brightness": -20
+    },
+    {
+      "name": "(bgcolord3)",
+      "value": 0,
+      "brightness": -30
+    },
+    {
+      "name": "(textcolor)",
+      "value": 15,
+      "brightness": 0
+    },
+    {
+      "name": "(primarycolor)",
+      "value": 6,
+      "brightness": 0
+    },
+    {
+      "name": "(primarycolorl1)",
+      "value": 6,
+      "brightness": 10
+    },
+    {
+      "name": "(primarycolorl2)",
+      "value": 6,
+      "brightness": 20
+    },
+    {
+      "name": "(primarycolorl3)",
+      "value": 6,
+      "brightness": 30
+    },
+    {
+      "name": "(primarycolord1)",
+      "value": 6,
+      "brightness": -10
+    },
+    {
+      "name": "(primarycolord2)",
+      "value": 6,
+      "brightness": -20
+    },
+    {
+      "name": "(primarycolord3)",
+      "value": 6,
+      "brightness": -30
+    },
+    {
+      "name": "(secondarycolor)",
+      "value": 4,
+      "brightness": 0
+    }
+  ],
+  "swww_params": "--transition-fps 165 --transition-step 10 --transition-duration 2 -f Nearest -t any",
+  "wal_params": "-n -e -q --backend colorz",
+  "wallpapers_dir": "/home/prepodobnuy/Documents/Wallpapers",
+  "cached_wallpapers_dir": "/home/prepodobnuy/.cache/rpaper/Wallpapers",
+  "wal_cache": "/home/prepodobnuy/.cache/wal/colors",
+  "use_pywal": true,
+  "apply_templates": true,
+  "templates": [
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/rofi.rasi",
+      "config_path": "/home/prepodobnuy/.config/rofi/config.rasi",
+      "use_quotes": false,
+      "use_sharps": true,
+      "opacity": "",
+      "command": ""
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/alacritty.toml",
+      "config_path": "/home/prepodobnuy/.config/alacritty/alacritty.toml",
+      "use_quotes": true,
+      "use_sharps": true,
+      "opacity": "",
+      "command": ""
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/variables.conf",
+      "config_path": "/home/prepodobnuy/.config/hypr/variables.conf",
+      "use_quotes": false,
+      "use_sharps": false,
+      "opacity": "ff",
+      "command": "hyprctl reload"
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/waybar.css",
+      "config_path": "/home/prepodobnuy/.config/waybar/style.css",
+      "use_quotes": false,
+      "use_sharps": true,
+      "opacity": "",
+      "command": "killall waybar ; waybar&"
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/swaync.css",
+      "config_path": "/home/prepodobnuy/.config/swaync/style.css",
+      "use_quotes": false,
+      "use_sharps": true,
+      "opacity": "",
+      "command": "swaync-client -rs"
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/swaync.json",
+      "config_path": "/home/prepodobnuy/.config/swaync/config.json",
+      "use_quotes": false,
+      "use_sharps": false,
+      "opacity": "",
+      "command": "swaync-client -R"
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/qt6ct.conf",
+      "config_path": "/home/prepodobnuy/.config/qt6ct/colors/wal.conf",
+      "use_quotes": false,
+      "use_sharps": false,
+      "opacity": "",
+      "command": ""
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/qt6ct-kde.colors",
+      "config_path": "/home/prepodobnuy/.config/qt6ct/colors/wal.colors",
+      "use_quotes": false,
+      "use_sharps": true,
+      "opacity": "",
+      "command": ""
+    },
+    {
+      "template_path": "/home/prepodobnuy/.my_script_files/wallpaperpy_templates/vesktop.css",
+      "config_path": "/home/prepodobnuy/.config/vesktop/themes/vesktop.css",
+      "use_quotes": false,
+      "use_sharps": true,
+      "opacity": "",
+      "command": ""
+    }
+  ]
 }

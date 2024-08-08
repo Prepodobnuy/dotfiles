@@ -19,11 +19,11 @@
 }
 
 .notification {
-  border-radius: 2px;
+  border-radius: 4px;
   margin-top: 5px;
   margin-right: -2px;
   background-color: @cc-bg;
-  box-shadow: 0px 0px 0px 1px @accent-color;
+  box-shadow: 0px 0px 0px 2px @accent-color;
   padding: 0;
 }
 
@@ -154,9 +154,9 @@
 
 .control-center {
   background: @cc-bg;
-  border-radius: 2px;
-  margin: 10px;
-  box-shadow: inset 0px 0px 0px 1px @accent-color;
+  border-radius: 4px;
+  margin: 4px;
+  box-shadow: inset 0px 0px 0px 2px @accent-color;
 }
 
 .control-center-list {

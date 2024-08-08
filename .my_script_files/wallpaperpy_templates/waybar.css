@@ -6,9 +6,9 @@
 
 window#waybar {
     background-color: (bgcolor);
-    border-bottom: 1px solid (primarycolor);
+    box-shadow: inset 0px 0px 0px 2px (primarycolor);
     color: (textcolor);
-
+    border-radius: 4px;
 }
 
 window#waybar.hidden {
@@ -20,7 +20,7 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: (color0);
+    background-color: (bgcolor);
     border: none;
 }
 
@@ -88,6 +88,12 @@ button:hover {
     padding: 0 2px;
     transition: box-shadow 0.25s;
 }
+#pulseaudio {
+    margin-left: 5px;
+}
+#tray {
+    margin-right: 5px;
+}
 
 #custom-notification {
     padding-right: 6px;
@@ -125,8 +131,6 @@ button:hover {
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-
-
 
 #tray > .passive {
     -gtk-icon-effect: dim;
