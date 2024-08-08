@@ -1,6 +1,5 @@
-![](preview/preview.jpg)
-
 # hyprland pywal dotfiles
+![](preview/preview.jpg)
 ## What does pywal affect?
 - qt apps
 - vesktop 
