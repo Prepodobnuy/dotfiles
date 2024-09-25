@@ -1,21 +1,21 @@
-# hyprland pywal dotfiles
+# hyprland rpaper dotfiles
+
 ![](preview/preview.jpg)
-## What does pywal affect?
+
+## What does color theme affect?
+
 - qt apps
-- vesktop 
+- vesktop
 - alacritty
 - rofi
 - swaync
-- but not gtk3/gtk3+/gtk4 apps ;(
-## Dependencies 
-```sh
-rofi pywal swaync qt6ct-kde otf-font-awesome ttf-jetbrains-mono-nerd waybar breeze hyprland  
-```
+- gtk3/gtk3+ apps
+
 ## Installation
-first of all install [rpaper](https://github.com/Prepodobnuy/rpaper), and then:
+
 ```sh
-git clone https://github.com/Prepodobnuy/dotfiles.git
-cd dotfiles
+git clone https://github.com/Prepodobnuy/rpaper.git
+cd hyprland_rpaper_dots
 chmod +x install.sh
 ./install.sh
 cd ..
