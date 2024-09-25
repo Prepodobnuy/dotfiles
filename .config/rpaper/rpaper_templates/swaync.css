@@ -1,0 +1,233 @@
+@define-color cc-bg (bg);
+@define-color accent-color (primary);
+@define-color inaccent-color (primaryl3);
+
+@define-color noti-border-color (primary);
+@define-color noti-bg-darker (primaryl3);
+@define-color noti-close-bg (primaryl3);
+
+@define-color text-color (text);
+
+
+.notification-row {
+  outline: none;
+  background: rgba(0, 0, 0, 0)
+}
+
+.notification-row:hover {
+  background: rgba(0, 0, 0, 0)
+}
+
+.notification {
+  border-radius: 4px;
+  margin-top: 5px;
+  margin-right: -2px;
+  background-color: @cc-bg;
+  box-shadow: 0px 0px 0px 0px @accent-color;
+  padding: 0;
+}
+
+.close-button {
+  background-color: @cc-bg;
+  color: @text-color;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-right: -4px;
+  box-shadow: inset 0px 0px 0px 1px @accent-color;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background-color: @cc-bg;
+  box-shadow: inset 0px 0px 0px 1px @inaccent-color;
+  transition: all 0.1s ease-in-out;
+  border: none;
+}
+
+.notification-default-action,
+.notification-action {
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  color: @text-color;
+  transition: all 0.15s ease-in-out;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  -gtk-icon-effect: none;
+  background: transparent;
+}
+
+.notification-default-action {
+  border-radius: 0px;
+}
+
+/* When alternative actions are visible */
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action {
+  border-radius: 0px;
+  border-top: none;
+  border-right: none;
+}
+
+/* add bottom border radius to eliminate clipping */
+.notification-action:first-child {
+  border-bottom-left-radius: 10px;
+}
+
+.notification-action:last-child {
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid @noti-border-color;
+}
+
+.inline-reply {
+  margin-top: 8px;
+}
+.inline-reply-entry {
+  background: @noti-bg-darker;
+  color: @text-color;
+  caret-color: @text-color;
+  border: 1px solid @noti-border-color;
+  border-radius: 4px;
+}
+.inline-reply-button {
+  margin-left: 4px;
+  background: transparent;
+  box-shadow: inset 0px 0px 0px 1px @accent-color;
+  border-radius: 2px;
+  color: @text-color;
+}
+.inline-reply-button:disabled {
+  background: initial;
+  color: @text-color;
+  box-shadow: inset 0px 0px 0px 1px @accent-color;
+}
+.inline-reply-button:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 34, 34, 1) 0%,
+    rgba(5, 5, 5, 0.9) 100%
+  );
+}
+
+.body-image {
+  margin-top: 2px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.summary {
+  font-size: 11px;
+  font-weight: bold;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 11px;
+  font-weight: bold;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+  margin-top: -6px;
+  margin-right: 6px;
+}
+
+.body {
+  font-size: 11px;
+  font-weight: normal;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+}
+
+.control-center {
+  background: @cc-bg;
+  border-radius: 4px;
+  margin: 12px;
+  box-shadow: inset 0px 0px 0px 0px @accent-color;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: alpha(black, 0.25);
+}
+
+/*** Widgets ***/
+
+/* Title widget */
+.widget-title {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+.widget-title > button {
+  font-size: initial;
+  font-weight: 400;
+  text-shadow: none;
+  background-color: @cc-bg;
+  color: @text-color;
+  box-shadow: none;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+.widget-title > button:hover {
+  background-color: @accent-color;
+  color: @cc-bg;
+}
+.widget-title > button:active {
+  background-color: @cc-bg;
+  color: @text-color;
+}
+
+.widget-dnd {
+  color: @text-color;
+  margin: 8px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd > switch {
+  font-size: initial;
+  border-radius: 4px;
+  background: @cc-bg;
+}
+
+.widget-dnd > switch:checked {
+  background-color: @cc-bg;
+}
+
+.widget-dnd > switch slider {
+  background-color: @accent-color;
+  border-radius: 4px;
+}
+
+
+/* Label widget */
+.widget-label {
+  margin: 8px;
+}
+.widget-label > label {
+  font-size: 1.1rem;
+}

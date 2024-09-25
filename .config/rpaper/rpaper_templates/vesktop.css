@@ -1,0 +1,140 @@
+/**
+* @name wal
+* @author prepodobnuy
+* @description A theme based on @Melonturtle_ stream design
+*/
+
+/* Remove decorations */
+
+:root {
+  /* --- User variables --- */
+
+  /* Jumping GIF */
+  --jumping-gif: url("https://i.imgur.com/dCd49s0.gif");
+
+  /* Background (if you want an image replace it by : 
+
+--background-tertiary-alt: url("image-link"); without that => */
+  --background-tertiary-alt: (primaryl3);
+
+  /* Border-radius for the whole theme */
+  --border-radius: 4px;
+}
+
+* {
+  transition: 
+    background-color 0.1s,
+    color 0.1s;
+
+}
+
+.iconVisibility_f6f816 {
+  transition: transform 0.2s;
+}
+.iconVisibility_f6f816:hover {
+}
+.iconVisibility_f6f816:active {
+  transform: translateY(2px);
+}
+
+.wrapper_f90abb {
+  transition: transform 0.2s;
+}
+.wrapper_f90abb:hover {
+}
+.wrapper_f90abb:active {
+  transform: scale(0.96);
+}
+
+.theme-dark, .theme-light {
+  /* Text */
+  --text-normal: (text);
+  --header-primary: (text);
+  --interactive-normal: (primaryl3);
+  --channels-default: (text);
+
+  --text-muted: (text);
+  --interactive-muted: (text);
+
+  --header-secondary: (primaryl3);
+  --interactive-hover: (primaryl3);
+  --interactive-active: (primaryl3);
+
+  /* Background color */
+  --background-primary: (bg);
+  --background-secondary: (bgd1);
+  --background-secondary-alt: (bgd2);
+  --background-tertiary: (bgd2);
+  --background-floating: (bgd1);
+  --background-accent: (primaryd3);
+  --channeltextarea-background: var(--background-secondary);
+  --modal-background: var(--background-primary);
+  --background-modifier-hover: (primary);
+  --background-modifier-active: (primaryd2);
+  --background-modifier-selected: (primary);
+  --toast-background: #5e3640 !important;
+  --toast-header: #3b1d24 !important;
+  --toast-contents: #49292f !important;
+  --toast-border: #49292f !important;
+  --input-background: var(--background-secondary);
+
+  /* Scrollbar */
+  --scrollbar-auto-thumb: (primary);
+  --scrollbar-auto-track: (bgl1);
+  --scrollbar-thin-thumb: (primary);
+  --scrollbar-thin-track: transparent;
+
+  /* Other */
+  --channel-text-area-placeholder: var(--interactive-normal);
+  --deprecated-quickswitcher-input-background: var(--background-primary);
+}
+.colorBrand-3cPPsm {
+  color: (primary);
+}
+.colorDefault-CDqZdO.focused-3qFvc8,
+.colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
+  background-color: var(--background-modifier-hover) !important;
+}
+
+/* Buttons */
+.lookFilled-1H2Jvj {
+  background-color: (primary) !important;
+}
+.lookFilled-1H2Jvj:active,
+.lookFilled-1H2Jvj:hover {
+  background-color: (primary) !important;
+}
+.lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
+  color: (primary);
+  border-color: (primary);
+}
+
+/* Hover background */
+.colorDefault-CDqZdO.focused-3qFvc8,
+.colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
+  color: var(--interactive-normal);
+}
+
+.colorDefault-CDqZdO.focused-3qFvc8,
+.colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
+  background-color: var(--background-modifier-hover) !important;
+}
+
+/* Buttons */
+.lookFilled-1H2Jvj {
+  background-color: (primary) !important;
+}
+.lookFilled-1H2Jvj:active,
+.lookFilled-1H2Jvj:hover {
+  background-color: (primaryd1) !important;
+}
+.lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
+  color: (primary);
+  border-color: (primary);
+}
+
+/* Hover background */
+.colorDefault-CDqZdO.focused-3qFvc8,
+.colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
+  color: var(--interactive-normal);
+}

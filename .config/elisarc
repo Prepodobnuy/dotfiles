@@ -1,0 +1,14 @@
+[ElisaFileIndexer]
+RootPath[$e]=$HOME/Music
+
+[PlayerSettings]
+ShowNowPlayingBackground=false
+UseFavoriteStyleRatings=true
+
+[UiSettings]
+ColorScheme=
+
+[Views]
+ColorScheme=Default
+SortRolePreferences=Track==DurationRole
+ViewStylePreferences=Artist==GridStyle

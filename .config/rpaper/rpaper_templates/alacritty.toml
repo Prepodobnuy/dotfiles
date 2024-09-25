@@ -1,0 +1,46 @@
+[colors.normal]
+black   = (0)
+red     = (1)
+green   = (2)
+yellow  = (3)
+blue    = (4)
+magenta = (5)
+cyan    = (6)
+white   = (7)
+
+[colors.bright]
+black   = (0)
+red     = (1)
+green   = (2)
+yellow  = (3)
+blue    = (4)
+magenta = (5)
+cyan    = (6)
+white   = (7)
+
+[colors.primary]
+background = (bg)
+foreground = (text)
+
+[font]
+size = 9
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window.padding]
+x = 0
+y = 0

@@ -1,0 +1,81 @@
+@theme "/dev/null"
+
+* {
+	bg: (bg);
+	background-color: @bg;
+}
+
+configuration {
+	show-icons: false;
+    location: 0;
+	font: "JetBrainsMono Nerd Font Mono 9";	
+	display-drun: "";
+}
+
+window { 
+	width: 720px;
+	transparency: "real";
+	orientation: vertical;
+	border-radius: 4px;
+}
+
+mainbox {
+	children: [inputbar, listview];
+}
+
+
+// ELEMENT
+// -----------------------------------
+
+element {
+	padding: 8 2;
+	text-color: (text);
+}
+
+element selected {
+	text-color: (bg);
+	background-color: (primary);
+	border-radius: 3px;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element-icon {
+	size: 18 px;
+	background-color: inherit;
+	padding: 0 4 0 0;
+	alignment: vertical;
+}
+
+listview {
+	columns: 2;
+	lines: 13;
+	padding: 8 0 0 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: false;
+	border: 0 10 6 10;
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+	text-color: (text);
+	padding: 10 10 0 0;
+	margin: 0 -2 0 0;
+}
+
+inputbar {
+	padding: 0 0 0;
+	margin: 0 0 0 0;
+} 
+
+prompt {
+	text-color: (text);
+	padding: 10 6 0 10;
+	margin: 0 -2 0 0;
+}

@@ -1,34 +1,57 @@
 // -*- mode: jsonc -*-
 {
-  // "layer": "top", // Waybar at top layer
-  // "position": "left", // Waybar position (top|bottom|left|right)
-  // "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 32,
+  "position": "bottom", // (top|bottom|left|right)
+  "height": 28,
   "spacing": 4,
+  "margin-top": 0,
+  "margin-bottom": 12,
+  "margin-left": 12,
+  "margin-right": 12,
   "modules-left": [
-    "pulseaudio"
+    "hyprland/language"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "clock",
-    "hyprland/language",
+    "tray",
     "custom/notification",
-    "tray"
+    "pulseaudio",
+    "clock"
   ],
   "tray": {
-    // "icon-size": 21,
+    "icon-size": 14,
     "spacing": 4
   },
   "clock": {
-    // "timezone": "America/New_York",
+    "timezone": "Europe/Moscow",
+    "format": "{:%H:%M}",
+    "format-alt": "{:%H:%M %d.%m.%Y}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format-alt": "{:%d.%m.%Y}"
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon}   {format_source}",
+    "scroll-step": 1, // %, can be a float
+    "format": "{icon}  {volume}%",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
@@ -50,25 +73,10 @@
     "on-click": "pavucontrol"
   },
   "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "DP-1": [
-        1,
-        2,
-        3,
-        4
-      ],
-      "HDMI-A-1": [
-        5,
-        6,
-        7,
-        8
-      ]
-    },
     "format": "{icon}",
     "format-icons": {
       "active": "◆",
-      "urgent": "◆",
-      "default": "◇",
+      "default": "◇"
     }
   },
   "hyprland/language": {
@@ -77,25 +85,25 @@
     "format-ru": "Ru"
   },
   "custom/notification": {
-      "tooltip": false,
-      "format": "{icon}",
-      "format-icons": {
-        "notification": "󱅫",
-        "none": "󰂚",
-        "dnd-notification": "󰂛<sup></sup>",
-        "dnd-none": "󰂛",
-        "inhibited-notification": "󰂠<sup></sup>",
-        "inhibited-none": "󰂠",
-        "dnd-inhibited-notification": "󰂛<sup></sup>",
-        "dnd-inhibited-none": "󰂛"
-      },
-      "max-length": 3,
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "sleep 0.2 && swaync-client -t -sw",
-      "on-click-right": "sleep 0.2 && swaync-client -d -sw",
-      "on-click-middle": "sleep 0.2 && swaync-client -C -sw",
-      "escape": true
-    }
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂚",
+      "dnd-notification": "󰂛<sup></sup>",
+      "dnd-none": "󰂛",
+      "inhibited-notification": "󰂠<sup></sup>",
+      "inhibited-none": "󰂠",
+      "dnd-inhibited-notification": "󰂛<sup></sup>",
+      "dnd-inhibited-none": "󰂛"
+    },
+    "max-length": 3,
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.2 && swaync-client -t -sw",
+    "on-click-right": "sleep 0.2 && swaync-client -d -sw",
+    "on-click-middle": "sleep 0.2 && swaync-client -C -sw",
+    "escape": true
+  }
 }

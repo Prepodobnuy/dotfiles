@@ -1,0 +1,127 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: (bg);
+    box-shadow: inset 0px 0px 0px 0px (primary);
+    color: (text);
+    border-radius: 4px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.chromium {
+    background-color: (bg);
+    border: none;
+}
+
+button {
+    transition: box-shadow 0.25s;
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px (primary);
+}
+
+#pulseaudio:hover {
+    box-shadow: inset 0 -3px (primary);
+}
+
+#workspaces button {
+    padding: 0 2px;
+    background-color: transparent;
+    color: (text);
+    transition: box-shadow 0.25s, color 0.1s, color 0.35s, border-radius 0.25s;
+}
+#workspaces button * {
+    font-family: sans-serif;
+    font-size: 18px;
+    color: (text);
+    transition: font-size 0.25s, color 0.5s, padding 0.2s;
+}
+
+#workspaces button:hover * {
+    color: (primary);
+    transition: font-size 0.25s, color 0.5s, padding 0.2s;
+}
+
+#workspaces button.active * {
+    padding: 0 0;
+    color: (primary);
+    /*animation: rainbow 2.5s linear 0.5s infinite;*/
+}
+
+#workspaces button.active:hover * {
+    font-size: 18px;
+}
+
+#clock,
+#pulseaudio,
+#custom-notification,
+#language,
+#tray {
+    color: (text);
+    padding: 0 2px;
+    transition: box-shadow 0.25s;
+}
+#pulseaudio {
+}
+#tray {
+}
+#language {
+    margin-left: 4px;
+}
+#custom-notification {
+    padding-right: 4px;
+    margin-right: 2px;
+}
+
+#clock {
+    margin-top: 2px;
+    margin-right: 4px;
+}
+
+#pulseaudio {
+    transition: box-shadow 0.25s;
+    color: (text);
+}
+
+#clock:hover,
+#pulseaudio:hover,
+#custom-notification:hover,
+#language:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px (primary);
+}
+
+#window,
+#workspaces {
+    margin: 2px;
+}
+#workspaces button:hover {
+    box-shadow: inset 0 0px transparent;
+}
+
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
