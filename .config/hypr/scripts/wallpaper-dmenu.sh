@@ -1,1 +1,0 @@
-rpaper ~/Documents/Wallpapers/$(rofi -dmenu < <(ls /home/prepodobnuy/Documents/Wallpapers/))
