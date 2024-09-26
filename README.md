@@ -11,6 +11,11 @@
 - swaync
 - gtk3/gtk3+ apps
 
+## Installation dependencies
+
+- paru
+- git
+
 ## Installation
 
 ```sh
