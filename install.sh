@@ -18,7 +18,7 @@ mkdir -p ~/.cache/rpaper/
 mkdir -p ~/.cache/rpaper/rwal/
 mkdir -p ~/.cache/rpaper/Wallpapers/
 mkdir -p ~/Documents/
-mkdir -p ~/Documents/Wallpapers/
+cp -r Wallpapers ~/Documents/Wallpapers/
 
 echo "changing .config"
 cp -rf .config/ ~/.config/
@@ -27,5 +27,4 @@ echo "changing .themes"
 cp -rf .themes/ ~/.themes/
 
 echo "change display size params in ~/.config/hypr/hyprland.conf and ~/.config/rpaper/config.json"
-echo "dont forget to put some wallpapers in ~/Documents/Wallpapers/ to rpaper properly work"
 echo "bye"
