@@ -19,7 +19,7 @@
 ## Installation
 
 ```sh
-git clone https://github.com/Prepodobnuy/rpaper.git
+git clone https://github.com/Prepodobnuy/hyprland_rpaper_dots.git
 cd hyprland_rpaper_dots
 chmod +x install.sh
 ./install.sh

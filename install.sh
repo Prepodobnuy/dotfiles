@@ -18,13 +18,18 @@ mkdir -p ~/.cache/rpaper/
 mkdir -p ~/.cache/rpaper/rwal/
 mkdir -p ~/.cache/rpaper/Wallpapers/
 mkdir -p ~/Documents/
-cp -r Wallpapers ~/Documents/Wallpapers/
+mkdir -p ~/Documents/Wallpapers/
+mv Wallpapers/* ~/Documents/Wallpapers/
 
 echo "changing .config"
-cp -rf .config/ ~/.config/
+mkdir -p ~/.config
+mv .config/* ~/.config/
+echo "Done"
 
 echo "changing .themes"
-cp -rf .themes/ ~/.themes/
+mkdir -p .themes
+mv .themes/* ~/.themes/
+echo "Done"
 
 echo "change display size params in ~/.config/hypr/hyprland.conf and ~/.config/rpaper/config.json"
 echo "bye"
