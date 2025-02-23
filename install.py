@@ -19,6 +19,7 @@ PACKAGES = [
     "rust",
     "helix",
     "alacritty",
+    "fastfetch",
     "firefox",
     "make",
     "imagemagick",
