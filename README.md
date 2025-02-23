@@ -36,7 +36,7 @@
 ```sh
 git clone https://github.com/Prepodobnuy/dotfiles.git
 cd dotfiles
-python install.sh
+python install.py
 cd ..
 rm -r dotfiles
 ```
