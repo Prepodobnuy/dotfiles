@@ -1,0 +1,66 @@
+@theme "/dev/null"
+
+* {
+  bg: #38464B;
+  background-color: #00000000;
+}
+
+configuration {
+	show-icons: true;
+	location: 0;
+	font: "JetBrainsMono Nerd Font Mono 9";	
+	display-drun: "search";
+}
+
+window { 
+	background-color: #00000000;
+	width: 960px;
+	transparency: "real";
+	orientation: horizontal;
+	border-radius: 0px;
+}
+
+mainbox {
+	children: [listview];
+}
+
+
+// ELEMENT
+// -----------------------------------
+
+element {
+	padding: 0 0 5 0;
+	text-color: #EBF9FE;
+	background-color: #243237;
+	border-radius: 0px;
+}
+
+element selected {
+	text-color: #061419;
+	background-color: #4C5A5F;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element-icon{
+	size:13em;
+	border-radius:0em;
+} 
+
+element{
+	orientation:vertical;
+}
+
+listview {
+	columns: 5;
+	lines: 1;
+	padding: 0 0 0.5em 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: true;
+	spacing: 0.5em;
+	border: 0 0 0 0;
+}

@@ -1,8 +1,9 @@
 @theme "/dev/null"
 
 * {
-	bg: (bg);
+	bg: #38464B;
 	background-color: @bg;
+	border-color: @bg;
 }
 
 configuration {
@@ -13,14 +14,14 @@ configuration {
 }
 
 window { 
-	width: 420px;
+	width: 620px;
 	transparency: "real";
 	orientation: vertical;
-	border-radius: 4px;
+	border-radius: 0px;
 }
 
 mainbox {
-	children: [inputbar, listview];
+	children: [listview, inputbar];
 }
 
 
@@ -28,14 +29,15 @@ mainbox {
 // -----------------------------------
 
 element {
-	padding: 8 2;
-	text-color: (text);
+	margin: 2 2;
+	padding: 4 2;
+	text-color: #EBF9FE;
 }
 
 element selected {
-	text-color: (bg);
-	background-color: (primary);
-	border-radius: 3px;
+	text-color: #1A282D;
+	background-color: #38464B;
+	border-radius: 0px;
 }
 
 element-text {
@@ -44,29 +46,29 @@ element-text {
 }
 
 element-icon {
-	size: 18 px;
+	size: 21 px;
 	background-color: inherit;
 	padding: 0 4 0 0;
 	alignment: vertical;
 }
 
 listview {
-	columns: 2;
-	lines: 13;
-	padding: 8 0 0 0;
+	background-color: @bg;
+	columns: 3;
+	lines: 7;
+	padding: 0 0 2 0;
 	fixed-height: true;
 	fixed-columns: true;
 	fixed-lines: false;
-	border: 0 10 6 10;
 }
 
 // INPUT BAR 
 //------------------------------------------------
 
 entry {
-	text-color: (text);
-	padding: 10 10 0 0;
-	margin: 0 -2 0 0;
+	text-color: #EBF9FE;
+	padding: 0 0 5 0;
+	margin: 0 0 0 0;
 }
 
 inputbar {
@@ -75,7 +77,7 @@ inputbar {
 } 
 
 prompt {
-	text-color: (text);
-	padding: 10 6 0 10;
-	margin: 0 -2 0 0;
+	text-color: #EBF9FE;
+	padding: 0 0 0 0;
+	margin: 0 4 0 0;
 }

@@ -1,26 +1,26 @@
 [colors.normal]
-black   = "#000000"
-red     = "#6A0000"
-green   = "#6A2E00"
-yellow  = "#776A50"
-blue    = "#005867"
-magenta = "#00006A"
-cyan    = "#000069"
-white   = "#7A809D"
+black   = "#243237"
+red     = "#C86663"
+green   = "#C8A374"
+yellow  = "#67ADC7"
+blue    = "#5095C8"
+magenta = "#417BC8"
+cyan    = "#C2B1B2"
+white   = "#F0FEFF"
 
 [colors.bright]
-black   = "#000000"
-red     = "#6A0000"
-green   = "#6A2E00"
-yellow  = "#776A50"
-blue    = "#005867"
-magenta = "#00006A"
-cyan    = "#000069"
-white   = "#7A809D"
+black   = "#38464B"
+red     = "#DC7A77"
+green   = "#DCB788"
+yellow  = "#7BC1DB"
+blue    = "#64A9DC"
+magenta = "#558FDC"
+cyan    = "#D6C5C6"
+white   = "#FFFFFF"
 
 [colors.primary]
-background = "#F7FDFF"
-foreground = "#000012"
+background = "#1A282D"
+foreground = "#EBF9FE"
 
 [font]
 size = 9
@@ -42,5 +42,8 @@ family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [window.padding]
-x = 0
-y = 0
+x = 4
+y = 4
+
+[window]
+decorations = "None"

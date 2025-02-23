@@ -1,0 +1,14 @@
+[param]
+path:~/.config/rpaper/oomox-gtk-theme/oomox.sh
+format:{HEX}
+after:sh ~/.config/rpaper/oomox-gtk-theme/oomox.sh; killall waybar; waybar
+
+[colors]
+(bg{br}):0:10:0
+(fg{br}):15:15:0
+(pr{br}):0:40:0
+
+[caption]
+#!/bin/bash
+cd /home/prepodobnuy/.config/rpaper/oomox-gtk-theme/
+./change_color.sh -o my-test-theme <(echo -e "BG=(bg)\nBTN_BG=(pr)\nBTN_FG=(fg)\nFG=(fg)\nGRADIENT=0.0\nHDR_BTN_BG=(pr)\nHDR_BTN_FG=(fg)\nHDR_BG=(bg)\nHDR_FG=(fg)\nROUNDNESS=4\nSEL_BG=(pr)\nSEL_FG=(fg)\nSPACING=3\nTXT_BG=(bg)\nTXT_FG=(fg)\nWM_BORDER_FOCUS=9edc60\nWM_BORDER_UNFOCUS=0e0021\n")

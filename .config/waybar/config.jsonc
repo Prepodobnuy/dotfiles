@@ -1,24 +1,15 @@
 // -*- mode: jsonc -*-
 {
-  "position": "bottom", // (top|bottom|left|right)
+  "position": "top", // (top|bottom|left|right)
   "height": 28,
   "spacing": 4,
-  "margin-top": 0,
-  "margin-bottom": 12,
-  "margin-left": 12,
-  "margin-right": 12,
-  "modules-left": [
-    "hyprland/language"
-  ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "tray",
-    "custom/notification",
-    "pulseaudio",
-    "clock"
-  ],
+  "margin-top": 2,
+  "margin-bottom": 0,
+  "margin-left": 2,
+  "margin-right": 2,
+  "modules-left": ["hyprland/language"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "custom/notification", "pulseaudio", "clock"],
   "tray": {
     "icon-size": 14,
     "spacing": 4
@@ -38,16 +29,16 @@
         "days": "<span color='#ecc6d9'><b>{}</b></span>",
         "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-      }
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
     },
     "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
-      "on-scroll-down": "shift_down"
-    }
+      "on-scroll-down": "shift_down",
+    },
   },
   "pulseaudio": {
     "scroll-step": 1, // %, can be a float
@@ -64,25 +55,19 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""],
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol-qt",
   },
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
       "active": "◆",
-      "default": "◇"
-    }
+      "default": "◇",
+    },
   },
   "hyprland/language": {
     "format": "{}",
-    "format-en": "En",
-    "format-ru": "Ru"
   },
   "custom/notification": {
     "tooltip": false,
@@ -95,7 +80,7 @@
       "inhibited-notification": "󰂠<sup></sup>",
       "inhibited-none": "󰂠",
       "dnd-inhibited-notification": "󰂛<sup></sup>",
-      "dnd-inhibited-none": "󰂛"
+      "dnd-inhibited-none": "󰂛",
     },
     "max-length": 3,
     "return-type": "json",
@@ -104,6 +89,6 @@
     "on-click": "sleep 0.2 && swaync-client -t -sw",
     "on-click-right": "sleep 0.2 && swaync-client -d -sw",
     "on-click-middle": "sleep 0.2 && swaync-client -C -sw",
-    "escape": true
-  }
+    "escape": true,
+  },
 }

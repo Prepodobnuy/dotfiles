@@ -1,14 +1,12 @@
 [ElisaFileIndexer]
-RootPath[$e]=$HOME/Music
+RootPath[$e]=/home/prepodobnuy/.sdc/Documents/Music
 
 [PlayerSettings]
 ShowNowPlayingBackground=false
-UseFavoriteStyleRatings=true
 
 [UiSettings]
 ColorScheme=
 
 [Views]
 ColorScheme=Default
-SortRolePreferences=Track==DurationRole
-ViewStylePreferences=Artist==GridStyle
+InitialFilesViewPath=

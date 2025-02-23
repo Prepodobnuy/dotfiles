@@ -1,0 +1,64 @@
+theme = "base16_terminal"
+
+[editor]
+line-number = "relative"
+mouse = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "bar"
+select = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+enable = true
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = true
+
+[keys.normal]
+C-s = ":write"            # Ctrl + s to write
+C-c = "yank"              # Ctrl + c to copy
+C-x = "delete_selection"  # Ctrl + x to delete selection
+C-v = "paste_before"      # Ctrl + v to paste
+C-Q = ":write-quit"             # Ctrl + q to exit
+C-E = "append_mode"       # Ctrl + E
+C-e = "insert_mode"       # Ctrl + e to enter insert mode
+C-w = "select_line_above" # Ctrl + w to select line above or current line if it not selected
+C-W = "select_line_below" # Ctrl + W to select line below or current line if it not selected
+C-a = "select_all"        # Ctrl + a to select entire document
+C-d = "select_mode"       # Ctrl + d to enter select mode
+
+e = "move_next_word_end"
+E = "move_next_word_start"
+q = "move_prev_word_start"
+Q = "move_prev_word_end"
+
+w = "move_visual_line_up"
+a = "move_char_left"
+s = "move_visual_line_down"
+d = "move_char_right"
+
+[keys.select]
+C-s = ":write"            # Ctrl + s to write
+C-c = "yank"              # Ctrl + c to copy
+C-x = "delete_selection"  # Ctrl + x to delete selection
+C-v = "paste_before"      # Ctrl + v to paste
+C-Q = ":write-quit"             # Ctrl + q to exit
+C-E = "append_mode"       # Ctrl + E
+C-e = "insert_mode"       # Ctrl + e to enter insert mode
+C-W = "select_line_above" # Ctrl + w to select line above or current line if it not selected
+C-w = "select_line_below" # Ctrl + W to select line below or current line if it not selected
+C-a = "select_all"        # Ctrl + a to select entire document
+
+e = "extend_next_word_end"
+E = "extend_next_word_start"
+q = "extend_prev_word_start"
+Q = "extend_prev_word_end"
+
+w = "extend_visual_line_up"
+a = "extend_char_left"
+s = "extend_visual_line_down"
+d = "extend_char_right"

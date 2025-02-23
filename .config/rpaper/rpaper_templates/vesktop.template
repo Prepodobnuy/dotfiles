@@ -1,3 +1,13 @@
+[param]
+path:~/.config/vesktop/themes/vesktop.css
+format:#{HEX}
+
+[colors]
+(bg{br}):0:10:0
+(fg{br}):15:15:0
+(pr{br}):0:40:0
+
+[caption]
 /**
 * @name wal
 * @author prepodobnuy
@@ -15,7 +25,7 @@
   /* Background (if you want an image replace it by : 
 
 --background-tertiary-alt: url("image-link"); without that => */
-  --background-tertiary-alt: (primaryl3);
+  --background-tertiary-alt: (prBR90);
 
   /* Border-radius for the whole theme */
   --border-radius: 4px;
@@ -24,7 +34,7 @@
 * {
   transition: 
     background-color 0.1s,
-    color 0.1s;
+    color 10ms;
 
 }
 
@@ -48,30 +58,30 @@
 
 .theme-dark, .theme-light {
   /* Text */
-  --text-normal: (text);
-  --header-primary: (text);
-  --interactive-normal: (primaryl3);
-  --channels-default: (text);
+  --text-normal: (fg);
+  --header-primary: (fg);
+  --interactive-normal: (prLR7);
+  --channels-default: (fg);
 
-  --text-muted: (text);
-  --interactive-muted: (text);
+  --text-muted: (fg);
+  --interactive-muted: (fg);
 
-  --header-secondary: (primaryl3);
-  --interactive-hover: (primaryl3);
-  --interactive-active: (primaryl3);
+  --header-secondary: (prLR7);
+  --interactive-hover: (prLR6);
+  --interactive-active: (prLR5);
 
   /* Background color */
   --background-primary: (bg);
-  --background-secondary: (bgd1);
-  --background-secondary-alt: (bgd2);
-  --background-tertiary: (bgd2);
-  --background-floating: (bgd1);
-  --background-accent: (primaryd3);
+  --background-secondary: (bgDR1);
+  --background-secondary-alt: (bgDR2);
+  --background-tertiary: (bgDR3);
+  --background-floating: (bgLR2);
+  --background-accent: (prDR3);
   --channeltextarea-background: var(--background-secondary);
   --modal-background: var(--background-primary);
-  --background-modifier-hover: (primary);
-  --background-modifier-active: (primaryd2);
-  --background-modifier-selected: (primary);
+  --background-modifier-hover: (pr);
+  --background-modifier-active: (prl1);
+  --background-modifier-selected: (prl2);
   --toast-background: #5e3640 !important;
   --toast-header: #3b1d24 !important;
   --toast-contents: #49292f !important;
@@ -79,17 +89,17 @@
   --input-background: var(--background-secondary);
 
   /* Scrollbar */
-  --scrollbar-auto-thumb: (primary);
-  --scrollbar-auto-track: (bgl1);
-  --scrollbar-thin-thumb: (primary);
+  --scrollbar-auto-thumb: (pr);
+  --scrollbar-auto-track: (bg);
+  --scrollbar-thin-thumb: (pr);
   --scrollbar-thin-track: transparent;
 
   /* Other */
   --channel-text-area-placeholder: var(--interactive-normal);
-  --deprecated-quickswitcher-input-background: var(--background-primary);
+  --deprecated-quickswitcher-input-background: var(--background-pr);
 }
 .colorBrand-3cPPsm {
-  color: (primary);
+  color: (pr);
 }
 .colorDefault-CDqZdO.focused-3qFvc8,
 .colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
@@ -98,15 +108,15 @@
 
 /* Buttons */
 .lookFilled-1H2Jvj {
-  background-color: (primary) !important;
+  background-color: (pr) !important;
 }
 .lookFilled-1H2Jvj:active,
 .lookFilled-1H2Jvj:hover {
-  background-color: (primary) !important;
+  background-color: (pr) !important;
 }
 .lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
-  color: (primary);
-  border-color: (primary);
+  color: (pr);
+  border-color: (pr);
 }
 
 /* Hover background */
@@ -122,15 +132,15 @@
 
 /* Buttons */
 .lookFilled-1H2Jvj {
-  background-color: (primary) !important;
+  background-color: (pr) !important;
 }
 .lookFilled-1H2Jvj:active,
 .lookFilled-1H2Jvj:hover {
   background-color: (primaryd1) !important;
 }
 .lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
-  color: (primary);
-  border-color: (primary);
+  color: (pr);
+  border-color: (pr);
 }
 
 /* Hover background */

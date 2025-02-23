@@ -1,0 +1,77 @@
+[param]
+before:echo "alacritty template is updated"
+path:~/.config/alacritty/alacritty.toml
+format:"#{HEX}"
+
+[colors]
+(bg{br}):0:10:0
+(fg{br}):15:15:0
+(pr{br}):0:40:0
+(0{br}):0:20:0
+(1{br}):1:20:0
+(2{br}):2:20:0
+(3{br}):3:20:0
+(4{br}):4:20:0
+(5{br}):5:20:0
+(6{br}):6:20:0
+(7{br}):7:20:0
+(8{br}):0:40:0
+(9{br}):1:40:0
+(10{br}):2:40:0
+(11{br}):3:40:0
+(12{br}):4:40:0
+(13{br}):5:40:0
+(14{br}):6:40:0
+(15{br}):7:40:0
+
+[caption]
+[colors.normal]
+black   = (0)
+red     = (1)
+green   = (2)
+yellow  = (3)
+blue    = (4)
+magenta = (5)
+cyan    = (6)
+white   = (7)
+
+[colors.bright]
+black   = (8)
+red     = (9)
+green   = (10)
+yellow  = (11)
+blue    = (12)
+magenta = (13)
+cyan    = (14)
+white   = (15)
+
+[colors.primary]
+background = (bg)
+foreground = (fg)
+
+[font]
+size = 9
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[window.padding]
+x = 4
+y = 4
+
+[window]
+decorations = "None"
+

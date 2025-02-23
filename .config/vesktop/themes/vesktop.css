@@ -15,7 +15,7 @@
   /* Background (if you want an image replace it by : 
 
 --background-tertiary-alt: url("image-link"); without that => */
-  --background-tertiary-alt: #4CCBDA;
+  --background-tertiary-alt: (prBR90);
 
   /* Border-radius for the whole theme */
   --border-radius: 4px;
@@ -24,7 +24,7 @@
 * {
   transition: 
     background-color 0.1s,
-    color 0.1s;
+    color 10ms;
 
 }
 
@@ -48,30 +48,30 @@
 
 .theme-dark, .theme-light {
   /* Text */
-  --text-normal: #000012;
-  --header-primary: #000012;
-  --interactive-normal: #4CCBDA;
-  --channels-default: #000012;
+  --text-normal: #EBF9FE;
+  --header-primary: #EBF9FE;
+  --interactive-normal: #7E8C91;
+  --channels-default: #EBF9FE;
 
-  --text-muted: #000012;
-  --interactive-muted: #000012;
+  --text-muted: #EBF9FE;
+  --interactive-muted: #EBF9FE;
 
-  --header-secondary: #4CCBDA;
-  --interactive-hover: #4CCBDA;
-  --interactive-active: #4CCBDA;
+  --header-secondary: #7E8C91;
+  --interactive-hover: #748287;
+  --interactive-active: #6A787D;
 
   /* Background color */
-  --background-primary: #F7FDFF;
-  --background-secondary: #EDF3FF;
-  --background-secondary-alt: #E3E9FF;
-  --background-tertiary: #E3E9FF;
-  --background-floating: #EDF3FF;
-  --background-accent: #108F9E;
+  --background-primary: #1A282D;
+  --background-secondary: #101E23;
+  --background-secondary-alt: #061419;
+  --background-tertiary: #000A0F;
+  --background-floating: #2E3C41;
+  --background-accent: #1A282D;
   --channeltextarea-background: var(--background-secondary);
   --modal-background: var(--background-primary);
-  --background-modifier-hover: #2EADBC;
-  --background-modifier-active: #1A99A8;
-  --background-modifier-selected: #2EADBC;
+  --background-modifier-hover: #38464B;
+  --background-modifier-active: (prl1);
+  --background-modifier-selected: (prl2);
   --toast-background: #5e3640 !important;
   --toast-header: #3b1d24 !important;
   --toast-contents: #49292f !important;
@@ -79,17 +79,17 @@
   --input-background: var(--background-secondary);
 
   /* Scrollbar */
-  --scrollbar-auto-thumb: #2EADBC;
-  --scrollbar-auto-track: #FFFFFF;
-  --scrollbar-thin-thumb: #2EADBC;
+  --scrollbar-auto-thumb: #38464B;
+  --scrollbar-auto-track: #1A282D;
+  --scrollbar-thin-thumb: #38464B;
   --scrollbar-thin-track: transparent;
 
   /* Other */
   --channel-text-area-placeholder: var(--interactive-normal);
-  --deprecated-quickswitcher-input-background: var(--background-primary);
+  --deprecated-quickswitcher-input-background: var(--background-pr);
 }
 .colorBrand-3cPPsm {
-  color: #2EADBC;
+  color: #38464B;
 }
 .colorDefault-CDqZdO.focused-3qFvc8,
 .colorDefault-CDqZdO:active:not(.hideInteraction-2jPGL_) {
@@ -98,15 +98,15 @@
 
 /* Buttons */
 .lookFilled-1H2Jvj {
-  background-color: #2EADBC !important;
+  background-color: #38464B !important;
 }
 .lookFilled-1H2Jvj:active,
 .lookFilled-1H2Jvj:hover {
-  background-color: #2EADBC !important;
+  background-color: #38464B !important;
 }
 .lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
-  color: #2EADBC;
-  border-color: #2EADBC;
+  color: #38464B;
+  border-color: #38464B;
 }
 
 /* Hover background */
@@ -122,15 +122,15 @@
 
 /* Buttons */
 .lookFilled-1H2Jvj {
-  background-color: #2EADBC !important;
+  background-color: #38464B !important;
 }
 .lookFilled-1H2Jvj:active,
 .lookFilled-1H2Jvj:hover {
-  background-color: #24A3B2 !important;
+  background-color: (primaryd1) !important;
 }
 .lookOutlined-3yKVGo:not(.colorWhite-1H92hK) {
-  color: #2EADBC;
-  border-color: #2EADBC;
+  color: #38464B;
+  border-color: #38464B;
 }
 
 /* Hover background */

@@ -1,0 +1,99 @@
+[param]
+path:~/.config/rofi/config-wide.rasi
+format:#{HEX}
+
+[colors]
+(bg{br}):0:10:0
+(fg{br}):15:15:0
+(pr{br}):0:40:0
+
+[caption]
+@theme "/dev/null"
+
+* {
+  bg: (bg);
+  tb: (bg)00;
+  background-color: @tb;
+}
+
+configuration {
+	show-icons: true;
+	location: 0;
+	font: "JetBrainsMono Nerd Font Mono 9";	
+	display-drun: "search";
+}
+
+window { 
+	background-color: @tb;
+	width: 960px;
+	transparency: "real";
+	orientation: horizontal;
+	border-radius: 0px;
+}
+
+mainbox {
+	children: [listview, inputbar];
+}
+
+
+// ELEMENT
+// -----------------------------------
+
+element {
+	padding: 0 0 5 0;
+	text-color: (fg);
+	background-color: (bgLR1);
+	border-radius: 0px;
+}
+
+element selected {
+	text-color: (prLR10);
+	background-color: (prDR6);
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element-icon{
+	size:23em;
+	border-radius:0em;
+} 
+
+element{
+	orientation:vertical;
+}
+
+listview {
+	columns: 4;
+	lines: 2;
+	padding: 0 0 0.5em 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: true;
+	spacing: 0.5em;
+	border: 0 0 0 0;
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+	text-color: (prLR4);
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+inputbar {
+  background-color: (bgLR1);
+	padding: 5 5 5 5;
+	margin: 0 0 0 0;
+  border-radius: 4px;
+} 
+
+prompt {
+	text-color: (fg);
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}

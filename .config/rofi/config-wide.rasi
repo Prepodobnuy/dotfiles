@@ -1,0 +1,89 @@
+@theme "/dev/null"
+
+* {
+  bg: #1A282D;
+  tb: #1A282D00;
+  background-color: @tb;
+}
+
+configuration {
+	show-icons: true;
+	location: 0;
+	font: "JetBrainsMono Nerd Font Mono 9";	
+	display-drun: "search";
+}
+
+window { 
+	background-color: @tb;
+	width: 960px;
+	transparency: "real";
+	orientation: horizontal;
+	border-radius: 0px;
+}
+
+mainbox {
+	children: [listview, inputbar];
+}
+
+
+// ELEMENT
+// -----------------------------------
+
+element {
+	padding: 0 0 5 0;
+	text-color: #EBF9FE;
+	background-color: #243237;
+	border-radius: 0px;
+}
+
+element selected {
+	text-color: #9CAAAF;
+	background-color: #000A0F;
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element-icon{
+	size:23em;
+	border-radius:0em;
+} 
+
+element{
+	orientation:vertical;
+}
+
+listview {
+	columns: 4;
+	lines: 2;
+	padding: 0 0 0.5em 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: true;
+	spacing: 0.5em;
+	border: 0 0 0 0;
+}
+
+// INPUT BAR 
+//------------------------------------------------
+
+entry {
+	text-color: #606E73;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+inputbar {
+  background-color: #243237;
+	padding: 5 5 5 5;
+	margin: 0 0 0 0;
+  border-radius: 4px;
+} 
+
+prompt {
+	text-color: #EBF9FE;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}

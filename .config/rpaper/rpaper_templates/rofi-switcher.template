@@ -1,0 +1,76 @@
+[param]
+path:~/.config/rofi/switcher.rasi
+format:#{HEX}
+
+[colors]
+(bg{br}):0:10:0
+(fg{br}):15:15:0
+(pr{br}):0:40:0
+
+[caption]
+@theme "/dev/null"
+
+* {
+  bg: (bgLR3);
+  background-color: #00000000;
+}
+
+configuration {
+	show-icons: true;
+	location: 0;
+	font: "JetBrainsMono Nerd Font Mono 9";	
+	display-drun: "search";
+}
+
+window { 
+	background-color: #00000000;
+	width: 960px;
+	transparency: "real";
+	orientation: horizontal;
+	border-radius: 0px;
+}
+
+mainbox {
+	children: [listview];
+}
+
+
+// ELEMENT
+// -----------------------------------
+
+element {
+	padding: 0 0 5 0;
+	text-color: (fg);
+	background-color: (bgLR1);
+	border-radius: 0px;
+}
+
+element selected {
+	text-color: (bgDR2);
+	background-color: (prLR2);
+}
+
+element-text {
+	background-color: inherit;
+	text-color: inherit;
+}
+
+element-icon{
+	size:13em;
+	border-radius:0em;
+} 
+
+element{
+	orientation:vertical;
+}
+
+listview {
+	columns: 5;
+	lines: 1;
+	padding: 0 0 0.5em 0;
+	fixed-height: true;
+	fixed-columns: true;
+	fixed-lines: true;
+	spacing: 0.5em;
+	border: 0 0 0 0;
+}
