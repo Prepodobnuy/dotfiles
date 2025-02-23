@@ -1,7 +1,14 @@
 # my dotfiles
 
 ![](preview/preview.png)
-
+```
+*apps from top-left to bottom-right
+elisa (qt musik player)
+firefox
+dolphin
+alacritty with cava in it
+vesktop
+```
 ## Features
 
 - multi monitor
