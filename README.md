@@ -25,7 +25,7 @@
 - waybar
 - gtk3/gtk3+ apps [thanks to oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme)
 
-## Installation dependencies
+## Dependencies
 
 - paru
 - git
