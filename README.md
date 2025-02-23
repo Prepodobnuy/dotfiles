@@ -24,6 +24,7 @@
 - swaync
 - waybar
 - gtk3/gtk3+ apps [thanks to oomox-gtk-theme](https://github.com/themix-project/oomox-gtk-theme)
+- also you can write your own rpaper templates to apply colorscheme for apps you use
 
 ## Dependencies
 
